@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm --version)",
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(npx tailwindcss *)",
+      "Bash(npm run *)",
+      "Bash(grep -q \"ready in\\\\|Local:\" \"C:\\\\\\\\Users\\\\\\\\DELL\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--Shastri-Web\\\\\\\\4785a498-d5ef-4965-abf6-d293842a6dec\\\\\\\\tasks\\\\\\\\b2a28oop2.output\")",
+      "Bash(curl -s -o /dev/null -w \"HTTP %{http_code}\\\\n\" http://localhost:5173/)",
+      "Bash(grep -q \"ready in\\\\|error\\\\|Error\" \"C:\\\\\\\\Users\\\\\\\\DELL\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\claude\\\\\\\\d--Shastri-Web\\\\\\\\4785a498-d5ef-4965-abf6-d293842a6dec\\\\\\\\tasks\\\\\\\\bfdhfflwp.output\")",
+      "PowerShell($conn = Get-NetTCPConnection -LocalPort 5173 -ErrorAction SilentlyContinue; if \\($conn\\) { $conn | ForEach-Object { Stop-Process -Id $_.OwningProcess -Force -ErrorAction SilentlyContinue; \"Killed PID $\\($_.OwningProcess\\)\" } } else { \"No process on 5173\" })"
+    ]
+  }
+}

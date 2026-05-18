@@ -1,0 +1,14 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s -o /dev/null -w \"PriestsListPage HTTP %{http_code}\\\\npandit-hero.png HTTP \" \"http://localhost:5173/src/pages/user/PriestsListPage.jsx\")",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\\\\n\" \"http://localhost:5173/pandit-hero.png\")",
+      "Bash(curl -s -o /dev/null -w \"CalendarPage HTTP %{http_code}\\\\n\" \"http://localhost:5173/src/pages/user/CalendarPage.jsx\")",
+      "Bash(curl -s -o /dev/null -w \"BookingListPage HTTP %{http_code}\\\\n\" \"http://localhost:5173/src/pages/user/BookingListPage.jsx\")",
+      "Bash(curl -s -o /dev/null -w \"StorePage HTTP %{http_code}\\\\n\" \"http://localhost:5173/src/pages/user/StorePage.jsx\")",
+      "Bash(curl -s -o /dev/null -w \"logo.png HTTP %{http_code}\\\\n\" \"http://localhost:5173/logo.png\")",
+      "Bash(curl -s -o /dev/null -w \"ProfilePage HTTP %{http_code}\\\\n\" \"http://localhost:5173/src/pages/user/ProfilePage.jsx\")",
+      "Bash(curl -s -o /dev/null -w \"RequestBookingPage HTTP %{http_code}\\\\n\" \"http://localhost:5173/src/pages/user/RequestBookingPage.jsx\")"
+    ]
+  }
+}
