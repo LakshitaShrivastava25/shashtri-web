@@ -12,7 +12,7 @@ function FullPageSpinner() {
     <div className="flex items-center justify-center min-h-screen bg-bg">
       <div className="flex flex-col items-center gap-4">
         <img
-          src="/logo.png"
+          src="/logo-512.webp"
           alt="Shastri Ji"
           className="w-16 h-16 rounded-full object-cover"
         />

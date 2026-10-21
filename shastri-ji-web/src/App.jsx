@@ -46,6 +46,7 @@ import AdminRitualsPage from './pages/admin/AdminRitualsPage';
 import AdminBannersPage from './pages/admin/AdminBannersPage';
 
 import AppDownloadPopup from './components/AppDownloadPopup';
+import SplashScreen from './components/SplashScreen';
 
 function RootRoute() {
   const { isLoggedIn, role, isLoading } = useAuthStore();
@@ -54,7 +55,7 @@ function RootRoute() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <img
-          src="/logo.png"
+          src="/logo-512.webp"
           alt="Shastri Ji"
           className="w-16 h-16 rounded-full object-cover"
         />
@@ -317,6 +318,7 @@ function App() {
         />
       </Routes>
       <AppDownloadPopup />
+      <SplashScreen />
     </BrowserRouter>
   );
 }

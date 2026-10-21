@@ -19,7 +19,7 @@ function BrandMark() {
     <Link to="/home" className="flex items-center gap-2 flex-shrink-0">
       <div className="w-9 h-9 bg-gold rounded-xl flex items-center justify-center shadow-md shadow-gold/30">
         <img
-          src="/logo.png"
+          src="/logo-512.webp"
           alt="Shastri Ji Logo"
           className="w-8 h-8 rounded-full object-cover"
         />

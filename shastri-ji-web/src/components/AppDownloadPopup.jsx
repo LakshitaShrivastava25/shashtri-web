@@ -46,7 +46,7 @@ export default function AppDownloadPopup() {
             <div className="flex items-center gap-3">
               {/* App icon */}
               <img
-                src="/logo.png"
+                src="/logo-512.webp"
                 alt="Shastri Ji"
                 className="w-10 h-10 rounded-full object-cover flex-shrink-0"
                 style={{ background: '#2D1B00' }}

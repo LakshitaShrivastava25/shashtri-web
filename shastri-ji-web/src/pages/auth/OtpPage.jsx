@@ -5,26 +5,15 @@ import { authApi } from '../../api/services';
 import { useAuthStore } from '../../store';
 import { getRoleDashboard } from '../../components/layout/Guards';
 
-const OmIcon = ({ size = 32, className = '' }) => (
-  <svg width={size} height={size} viewBox="0 0 100 100" className={className}>
-    <text
-      x="50%"
-      y="68%"
-      textAnchor="middle"
-      fontSize="72"
-      fontFamily="serif"
-      fill="currentColor"
-    >
-      ॐ
-    </text>
-  </svg>
-);
-
 const AuthLayout = ({ children }) => (
   <div className="min-h-screen flex items-center justify-center px-4 py-8">
     <div className="w-full max-w-md">
       <div className="text-center mb-6">
-        <OmIcon size={48} className="text-gold mx-auto mb-2" />
+        <img
+          src="/logo-512.webp"
+          alt="Shastri Ji logo"
+          className="w-24 h-24 rounded-full object-cover mx-auto mb-3 ring-4 ring-gold/30 shadow-lg shadow-gold/20"
+        />
         <h1 className="font-heading text-2xl font-bold text-text-dark">Shastri Ji</h1>
         <p className="text-text-light text-sm">Sacred rituals at your doorstep</p>
       </div>
