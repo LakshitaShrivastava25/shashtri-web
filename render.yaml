@@ -1,0 +1,42 @@
+# Render Blueprint — deploys the Shastri Ji web app as a static site.
+# Render dashboard → New → Blueprint → pick this repo.
+# Paths are from the repo root (no rootDir) so the publish path is unambiguous.
+services:
+  - type: web
+    runtime: static
+    name: shastri-ji-web
+    branch: main
+    buildCommand: cd shastri-ji-web && npm ci --include=dev && npm run build
+    staticPublishPath: ./shastri-ji-web/dist
+    # Only redeploy when the web app changes
+    buildFilter:
+      paths:
+        - shastri-ji-web/**
+        - render.yaml
+    envVars:
+      # Vite 8 needs Node 20.19+ / 22.12+
+      - key: NODE_VERSION
+        value: "24"
+    headers:
+      # Hashed build files never change, so cache them for a year
+      - path: /assets/*
+        name: Cache-Control
+        value: public, max-age=31536000, immutable
+      # index.html must always be fresh so new deploys show up immediately
+      - path: /index.html
+        name: Cache-Control
+        value: no-cache
+      - path: /*
+        name: X-Content-Type-Options
+        value: nosniff
+      - path: /*
+        name: X-Frame-Options
+        value: DENY
+      - path: /*
+        name: Referrer-Policy
+        value: strict-origin-when-cross-origin
+    routes:
+      # Single-page app: let React Router handle every path that isn't a real file
+      - type: rewrite
+        source: /*
+        destination: /index.html

@@ -1,16 +1,48 @@
-# React + Vite
+# Shastri Ji — Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React 19 + Vite + Tailwind web app for booking pandits and rituals. Talks to the
+Shastri Ji backend API at `https://shashtri.onrender.com/api`.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Requires Node 20.19+ (or 22.12+).
 
-## React Compiler
+```bash
+npm install
+npm run dev        # http://localhost:5173
+```
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+In dev, API calls go to `/api` and Vite proxies them to the backend
+(`API_PROXY_TARGET` in `.env.development`), so CORS isn't an issue on localhost.
 
-## Expanding the ESLint configuration
+## Build
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+npm run build      # outputs to dist/
+npm run preview    # serve the production build locally
+```
+
+The production API URL comes from `.env.production` (`VITE_API_URL`).
+
+## Deploy to Render
+
+The repo root has a `render.yaml` Blueprint that sets everything up as a static site.
+
+1. Push to GitHub.
+2. Render dashboard → **New → Blueprint** → select this repo → **Apply**.
+
+Manual setup instead (New → Static Site):
+
+| Setting           | Value                                                          |
+| ----------------- | -------------------------------------------------------------- |
+| Build command     | `cd shastri-ji-web && npm ci --include=dev && npm run build`    |
+| Publish directory | `shastri-ji-web/dist`                                          |
+| Env var           | `NODE_VERSION` = `24`                                          |
+| Rewrite rule      | Source `/*` → Destination `/index.html`, Action **Rewrite**    |
+
+The rewrite rule is required — without it, refreshing any page other than `/`
+returns 404.
+
+**Backend CORS:** the API must allow the site's origin (e.g.
+`https://shastri-ji-web.onrender.com` and any custom domain) in its CORS allowed
+origins, otherwise browser requests such as Send OTP fail with "Network Error".
