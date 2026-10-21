@@ -71,29 +71,12 @@ function NavItem({ item, unreadCount, collapsed }) {
 
 function BrandMark({ size = 'md' }) {
   const dim = size === 'sm' ? 'w-7 h-7' : 'w-9 h-9';
-  const svgSize = size === 'sm' ? 16 : 22;
   return (
-    <div
-      className={`${dim} bg-gold rounded-xl flex items-center justify-center shadow-md shadow-gold/30 flex-shrink-0`}
-    >
-      <svg
-        width={svgSize}
-        height={svgSize}
-        viewBox="0 0 100 100"
-        className="text-white"
-      >
-        <text
-          x="50%"
-          y="68%"
-          textAnchor="middle"
-          fontSize="72"
-          fontFamily="serif"
-          fill="currentColor"
-        >
-          ॐ
-        </text>
-      </svg>
-    </div>
+    <img
+      src="/logo-512.webp"
+      alt="Shastri Ji logo"
+      className={`${dim} rounded-full object-cover ring-2 ring-gold shadow-md shadow-gold/30 flex-shrink-0`}
+    />
   );
 }
 
@@ -276,25 +259,11 @@ export function PublicLayout({ children }) {
       >
         <div className="max-w-6xl mx-auto px-5 py-4 flex items-center justify-between">
           <Link to="/" className="flex items-center gap-2.5">
-            <div className="w-9 h-9 bg-gold rounded-xl flex items-center justify-center shadow-md">
-              <svg
-                width="22"
-                height="22"
-                viewBox="0 0 100 100"
-                className="text-white"
-              >
-                <text
-                  x="50%"
-                  y="68%"
-                  textAnchor="middle"
-                  fontSize="72"
-                  fontFamily="serif"
-                  fill="currentColor"
-                >
-                  ॐ
-                </text>
-              </svg>
-            </div>
+            <img
+              src="/logo-512.webp"
+              alt="Shastri Ji logo"
+              className="w-10 h-10 rounded-full object-cover ring-2 ring-gold shadow-md flex-shrink-0"
+            />
             <div>
               <span className="font-heading font-bold text-lg text-white block leading-tight">
                 Shastri Ji

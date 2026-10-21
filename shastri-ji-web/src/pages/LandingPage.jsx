@@ -568,25 +568,11 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 bg-gold rounded-xl flex items-center justify-center">
-                <svg
-                  width="22"
-                  height="22"
-                  viewBox="0 0 100 100"
-                  className="text-white"
-                >
-                  <text
-                    x="50%"
-                    y="68%"
-                    textAnchor="middle"
-                    fontSize="72"
-                    fontFamily="serif"
-                    fill="currentColor"
-                  >
-                    ॐ
-                  </text>
-                </svg>
-              </div>
+              <img
+                src="/logo-512.webp"
+                alt="Shastri Ji logo"
+                className="w-10 h-10 rounded-full object-cover ring-2 ring-gold flex-shrink-0"
+              />
               <div>
                 <p className="font-heading font-bold text-white">Shastri Ji</p>
                 <p className="text-white/50 text-xs">Sacred Rituals</p>
