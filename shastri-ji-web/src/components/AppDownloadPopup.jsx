@@ -1,6 +1,10 @@
 import { useState, useEffect } from 'react';
 import { X, Smartphone } from 'lucide-react';
 
+const APP_STORE_URL = 'https://apps.apple.com/us/app/shashtri-jii/id6778672568';
+const PLAY_STORE_URL =
+  'https://play.google.com/store/apps/details?id=com.shastri_ji.app&pcampaignid=web_share';
+
 export default function AppDownloadPopup() {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isDismissed, setIsDismissed] = useState(false);
@@ -80,7 +84,9 @@ export default function AppDownloadPopup() {
             {/* Store buttons */}
             <div className="flex gap-2 mb-3">
               <a
-                href="#"
+                href={APP_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 bg-[#2D1B00] rounded-xl px-3 py-2.5 flex items-center gap-2 hover:bg-[#3D2810] transition-colors"
               >
                 <svg
@@ -100,7 +106,9 @@ export default function AppDownloadPopup() {
                 </div>
               </a>
               <a
-                href="#"
+                href={PLAY_STORE_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="flex-1 bg-[#2D1B00] rounded-xl px-3 py-2.5 flex items-center gap-2 hover:bg-[#3D2810] transition-colors"
               >
                 <svg
